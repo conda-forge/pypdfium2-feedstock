@@ -13,7 +13,10 @@ source:
 build:
   number: 2
   skip: win
-  script: python -m pip install . -vv --no-deps --no-build-isolation
+  script:
+    content: python -m pip install . -vv --no-deps --no-build-isolation
+    env:
+      LDFLAGS: "-headerpad_max_install_names ${LDFLAGS}"
 
 requirements:
   build:
@@ -44,4 +47,3 @@ about:
 extra:
   recipe-maintainers:
     - jan-janssen
-
