@@ -14,6 +14,7 @@ build:
   number: 2
   skip: true  # [win]
   binary_relocation: false  # [osx and arm64]
+  detect_binary_files_with_prefix: false
 
 requirements:
   build:
