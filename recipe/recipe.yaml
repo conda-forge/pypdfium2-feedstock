@@ -30,6 +30,7 @@ requirements:
 
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
+    - git
   host:
     - python
     - setuptools
@@ -37,7 +38,6 @@ requirements:
     - wheel !=0.38.0,!=0.38.1
     - ctypesgen-pypdfium2-team
     - pip
-    - git
   run:
     - python
 
