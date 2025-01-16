@@ -28,7 +28,6 @@ requirements:
       then:
         - python
         - cross-python_${{ target_platform }}
-        - ctypesgen-pypdfium2-team
 
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
