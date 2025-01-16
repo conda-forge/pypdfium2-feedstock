@@ -14,9 +14,8 @@ build:
   number: 2
   skip: win
   script:
-    content: python -m pip install . -vv --no-deps --no-build-isolation
-    env:
-      LDFLAGS: "-headerpad_max_install_names ${LDFLAGS}"
+    - export LDFLAGS="-headerpad_max_install_names ${LDFLAGS}"
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
