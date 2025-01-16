@@ -1,6 +1,6 @@
 context:
   name: pypdfium2
-  version: 4.30.0
+  version: 4.30.1
 
 package:
   name: ${{ name|lower }}
@@ -8,18 +8,18 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pypdfium2-${{ version }}.tar.gz
-  sha256: 48b5b7e5566665bc1015b9d69c1ebabe21f6aee468b509531c3c8318eeee2e16
+  sha256: 5f5c7c6d03598e107d974f66b220a49436aceb191da34cda5f692be098a814ce
 
 build:
-  number: 2
+  number: 0
   skip: win
-  script:
-    - export LDFLAGS="-headerpad_max_install_names ${LDFLAGS}"
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  prefix_detection:
-    ignore_binary_files: false
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   dynamic_linking:
-    binary_relocation: ${{ false if osx and arm64 else true }}
+    # Normally rattler-build tries to modify the install_name of the binary as well as other load commands to make it relocatable.
+    # This is not strictly required here, as the library has no dependencies outside of the sysroot.
+    # The operation by rattler-build will still fail, as the library was pre-compiled without "-headerpad_max_install_names",
+    # so replacing the install_name due to insufficient size.
+    binary_relocation: ${{ false if build_platform == 'osx-arm64' else true }}
 
 requirements:
   build:
