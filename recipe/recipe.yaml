@@ -19,7 +19,8 @@ build:
     # This is not strictly required here, as the library has no dependencies outside of the sysroot.
     # The operation by rattler-build will still fail, as the library was pre-compiled without "-headerpad_max_install_names",
     # so replacing the install_name due to insufficient size.
-    binary_relocation: ${{ false if build_platform == 'osx-arm64' else true }}
+    # binary_relocation: ${{ false if build_platform == 'osx-arm64' else true }}
+    binary_relocation: false
 
 requirements:
   build:
