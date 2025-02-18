@@ -7,8 +7,9 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pypdfium2-${{ version }}.tar.gz
-  sha256: 5f5c7c6d03598e107d974f66b220a49436aceb191da34cda5f692be098a814ce
+  # NOTE: the GH release contains the test folder that is not available in the PyPI release.
+  url: https://github.com/pypdfium2-team/pypdfium2/archive/refs/tags/${{ version }}.zip
+  sha256: cf12616f3460fa55d4e7e49dc8c06be2ab93aa2dd5944ce6b479b6ddfe40a995
 
 build:
   number: 0
