@@ -27,7 +27,6 @@ requirements:
       then:
         - python
         - cross-python_${{ target_platform }}
-
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - git
@@ -50,6 +49,7 @@ tests:
       run:
         - pytest
         - pillow
+        - numpy
     files:
       source:
         - tests/
