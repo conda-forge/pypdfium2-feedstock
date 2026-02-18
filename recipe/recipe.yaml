@@ -35,7 +35,7 @@ requirements:
     - setuptools
     - packaging
     - wheel
-    - ctypesgen-pypdfium2-team >= 5.4.0
+    - ctypesgen-pypdfium2-team >=5.4.0
     - pip
   run:
     - python
