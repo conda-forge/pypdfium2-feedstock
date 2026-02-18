@@ -12,7 +12,7 @@ source:
   sha256: beff700e6ff2477e20d75a90a73898147622de9b8e94ee15d3b0b37b2344397e
 
 build:
-  number: 0
+  number: 1
   skip: win
   script: CTYPESGEN_PIN='1' ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   dynamic_linking:
