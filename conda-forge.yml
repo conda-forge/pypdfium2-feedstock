@@ -8,6 +8,7 @@ test: native_and_emulated
 conda_build_tool: rattler-build
 conda_install_tool: pixi
 provider:
+  linux_aarch64: default
   osx_arm64: azure
 bot:
   automerge: true
