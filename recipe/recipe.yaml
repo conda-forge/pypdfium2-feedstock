@@ -1,6 +1,6 @@
 context:
   name: pypdfium2
-  version: "5.6.0"
+  version: "5.7.0"
 
 package:
   name: ${{ name|lower }}
@@ -9,7 +9,7 @@ package:
 source:
   # NOTE: the GH release contains the test folder that is not available in the PyPI release.
   url: https://github.com/pypdfium2-team/pypdfium2/archive/refs/tags/${{ version }}.zip
-  sha256: c56bd5135cc088d166b25a3b9ad1ad82218276e101d3fb1a281d5336a6b2aca7
+  sha256: 4ab1efca975b831a5b14f7af2de8096348be418bd95e4c608f411a49687d1e23
 
 build:
   number: 0
