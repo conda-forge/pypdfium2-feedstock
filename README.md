@@ -332,4 +332,5 @@ Feedstock Maintainers
 
 * [@jan-janssen](https://github.com/jan-janssen/)
 * [@janjagusch](https://github.com/janjagusch/)
+* [@pb01ka](https://github.com/pb01ka/)
 
